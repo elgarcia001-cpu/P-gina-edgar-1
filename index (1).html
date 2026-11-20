@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Permite mostrar correctamente los acentos
+         y caracteres especiales como la letra ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ajusta el área de visualización al ancho de la pantalla -->
+
+    <title>Página de Edgar / Caballos, videojuegos y casino</title>
+
+    <!-- Resume el contenido de la página; Google puede usarlo
+         en sus resultados de búsqueda -->
+    <meta name="description"
+          content="Página de Edgar García, donde comparto mis gustos:
+          los caballos, los videojuegos, la tecnología y los juegos de casino">
+
+    <!-- name="keywords" ayuda a los motores de búsqueda a identificar
+         el contenido de la página -->
+    <meta name="keywords"
+          content="Edgar García, caballos, carreras de caballos, videojuegos, tecnología, casino, póker, blackjack, Toluca">
+
+    <!-- name="author" indica el autor de la página -->
+    <meta name="author" content="Edgar Leonardo García Saldaña">
+
+    <!-- Aviso de contenido propio -->
+    <meta name="copyright" content="© 2026 Edgar Leonardo García Saldaña.
+          Todos los derechos reservados.">
+
+    <!-- ACTIVIDAD 3. Cargamos el CSS de Bootstrap desde Internet -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <!-- Conectamos nuestro CSS; debe estar en la misma carpeta que el HTML -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============= BOTONES PARA NAVEGAR (NAVBAR) ============= -->
+    <!-- href indica a qué parte de la página se quiere navegar
+         (al elemento que tenga ese mismo id) -->
+    <!-- navbar-expand-lg: en pantallas grandes se ve el menú completo;
+         en celular se esconde y aparece el botón de hamburguesa -->
+    <nav class="navbar navbar-expand-lg mb-4 navbar-personal"
+         aria-label="Secciones de la página">
+        <div class="container">
+            <!-- navbar-brand es el nombre o logo de la página.
+                 href="#inicio" lleva al elemento con id="inicio" -->
+            <!-- Tooltip: al pasar el cursor aparece un mensaje (se activa en script.js) -->
+            <a class="navbar-brand fw-bold" href="#inicio"
+               data-bs-toggle="tooltip" data-bs-placement="bottom"
+               data-bs-title="Volver al inicio">Edgar García</a>
+
+            <!-- Botón que abre y cierra el menú en pantallas pequeñas.
+                 data-bs-target="#menu" indica qué elemento va a abrir -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Abrir o cerrar menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- collapse: este es el menú que se abre y se cierra con el botón -->
+            <div class="collapse navbar-collapse" id="menu">
+                <!-- ms-auto manda los botones a la derecha;
+                     w-100 hace que en celular midan lo mismo -->
+                <ul class="navbar-nav ms-auto gap-2 py-2 py-lg-0">
+                    <li class="nav-item">
+                        <a href="#pasatiempos" class="btn btn-primary w-100">Mis pasatiempos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#comidas" class="btn btn-success w-100">Mis comidas favoritas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#planes" class="btn btn-warning w-100">Mis planes para desconectarme</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+
+        <!-- Contenido de la página, título principal -->
+        <!-- La clase titulo-principal (en style.css) le da color al encabezado -->
+        <h1 id="inicio" class="titulo-principal">Bienvenido a la página de Edgar García</h1>
+        <!-- Este es un párrafo de ejemplo -->
+        <p>Esta es una simple página web creada con HTML y Bootstrap.</p>
+
+        <!-- Botón que muestra un toast de saludo (se activa en script.js) -->
+        <button type="button" class="btn btn-outline-success mb-3" id="btnSaludo">
+            Salúdame
+        </button>
+
+        <!-- ========== ALERTA ========== -->
+        <div class="alert alert-info" role="alert">
+            ¡Bienvenido! Aquí comparto mis gustos: los caballos,
+            los videojuegos, la tecnología y los juegos de casino.
+        </div>
+
+        <!-- ========== PRESENTACIÓN ========== -->
+        <!-- h2 sirve para crear un subtítulo -->
+        <h2>Me gustan mucho los caballos</h2>
+        <!-- h3 organiza un subtema dentro de h2 -->
+        <h3>Disfruto montar a caballo y ver las carreras de caballos</h3>
+        <!-- h4 subdivide aún más el contenido en detalles menores -->
+        <h4>Me gustan mucho los videojuegos y la tecnología</h4>
+        <!-- h5 agrega detalles adicionales o información específica -->
+        <h5>También me gustan los juegos de casino, como el póker y el blackjack</h5>
+        <!-- h6 se usa para notas o detalles muy específicos -->
+        <h6>Me gusta seguir los mercados del oro y del petróleo</h6>
+
+        <!-- ========== CARRUSEL ========== -->
+        <section class="mt-4">
+            <h2 class="text-primary">Mis gustos en imágenes</h2>
+            <!-- El carrusel crea el componente y slide agrega la transición.
+                 El id permite que las flechas encuentren el carrusel.
+                 data-bs-ride="carousel" hace que las imágenes cambien solas -->
+            <div id="carrusel" class="carousel slide bg-dark" data-bs-ride="carousel">
+
+                <!-- Indicadores: las rayitas de abajo que muestran en qué imagen vas -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carrusel" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Imagen 1"></button>
+                    <button type="button" data-bs-target="#carrusel" data-bs-slide-to="1"
+                            aria-label="Imagen 2"></button>
+                    <button type="button" data-bs-target="#carrusel" data-bs-slide-to="2"
+                            aria-label="Imagen 3"></button>
+                </div>
+
+                <!-- carousel-inner contiene todas las imágenes -->
+                <div class="carousel-inner">
+
+                    <!-- carousel-item active es la imagen que se ve primero -->
+                    <div class="carousel-item active">
+                        <!-- Fondo de color en lugar de imagen -->
+                        <div class="d-block w-100 slide-color bg-success"></div>
+                        <!-- carousel-caption agrega un texto encima de la imagen -->
+                        <div class="carousel-caption">
+                            <h5>Caballos</h5>
+                            <p>Fuerza, nobleza y velocidad.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Fondo de color en lugar de imagen -->
+                        <div class="d-block w-100 slide-color bg-primary"></div>
+                        <div class="carousel-caption">
+                            <h5>Videojuegos</h5>
+                            <p>Mi forma favorita de desconectarme.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <!-- Fondo de color en lugar de imagen -->
+                        <div class="d-block w-100 slide-color bg-danger"></div>
+                        <div class="carousel-caption">
+                            <h5>Casino</h5>
+                            <p>Póker y blackjack con estrategia.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Flecha para ir a la imagen anterior -->
+                <button class="carousel-control-prev" type="button"
+                        data-bs-target="#carrusel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <!-- Flecha para ir a la imagen siguiente -->
+                <button class="carousel-control-next" type="button"
+                        data-bs-target="#carrusel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============= TARJETAS ============= -->
+        <section class="mt-4" id="pasatiempos">
+            <h2 class="text-primary">Acerca de mis pasatiempos</h2>
+
+            <!-- Tarjeta básica: card crea el contenedor -->
+            <div class="card mb-4">
+                <!-- card-body crea el contenido de la tarjeta -->
+                <div class="card-body">
+                    <h5 class="card-title">Caballos</h5>
+                    <p class="card-text">Me gustan mucho los caballos: montar, convivir
+                        con ellos y ver las carreras de caballos.</p>
+                    <!-- Este enlace lleva a la tabla de mis planes -->
+                    <a href="#planes" class="btn btn-primary">Conoce mis planes</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de videojuegos -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Videojuegos</h5>
+                    <p class="card-text">Me gusta mucho jugar videojuegos y estar
+                        al día con la tecnología: consolas, PC y nuevos lanzamientos.</p>
+                    <a href="#planes" class="btn btn-secondary">Conoce mis planes</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de casino -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Casino</h5>
+                    <p class="card-text">Me gustan los juegos de casino como el póker
+                        y el blackjack, porque son de estrategia y probabilidad.</p>
+                    <a href="#comidas" class="btn btn-success">Conoce mis comidas favoritas</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta con encabezado: card-header agrega una barra arriba -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    Lo que sigo todos los días
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Mercados</h5>
+                    <p class="card-text">Me gusta analizar el precio del oro
+                        y del petróleo (WTI y Brent).</p>
+                    <a href="#planes" class="btn btn-danger">Conoce mis planes</a>
+                    <!-- Popover: al hacer clic aparece un cuadro con más información -->
+                    <button type="button" class="btn btn-outline-dark"
+                            data-bs-toggle="popover"
+                            data-bs-title="WTI y Brent"
+                            data-bs-content="Son los dos precios de referencia del petróleo:
+                            WTI es de Estados Unidos y Brent del Mar del Norte.">
+                        ¿Qué es WTI?
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============= LISTA NO ORDENADA ============= -->
+        <section class="mt-4">
+            <h2 class="text-primary">Cosas que hago en el tiempo libre</h2>
+            <!-- ul crea una lista no ordenada, li crea un elemento de la lista -->
+            <ul>
+                <li>Jugar videojuegos</li>
+                <li>Jugar póker y blackjack</li>
+                <li>Revisar el mercado del oro y del petróleo</li>
+                <li>Investigar sobre tecnología</li>
+                <li>Salir a comer con mis amigos</li>
+            </ul>
+        </section>
+
+        <!-- ============= LISTA ORDENADA ============= -->
+        <section class="mt-4" id="comidas">
+            <h2 class="text-primary">Mis comidas favoritas</h2>
+            <!-- ol crea una lista ordenada, li crea un elemento de la lista -->
+            <ol>
+                <li>Tacos</li>
+                <li>Comida china</li>
+                <li>Pizza</li>
+            </ol>
+        </section>
+
+        <!-- ============= TABLA ============= -->
+        <section class="mt-4" id="planes">
+            <h2 class="text-primary">Mis planes para desconectarme</h2>
+            <!-- table-responsive permite desplazar la tabla en celular;
+                 table, table-striped y table-bordered le dan estilo de Bootstrap -->
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <!-- thead agrupa los encabezados; th crea un encabezado -->
+                    <thead class="table-success">
+                        <tr>
+                            <th>Tiempo disponible</th>
+                            <th>Planes</th>
+                            <th>Qué necesito</th>
+                        </tr>
+                    </thead>
+                    <!-- tbody agrupa las filas; tr crea una fila y td una celda -->
+                    <tbody>
+                        <tr>
+                            <td>30 minutos</td>
+                            <td>Revisar las noticias de los mercados</td>
+                            <td>Celular y una app de gráficas</td>
+                        </tr>
+                        <tr>
+                            <td>1 hora</td>
+                            <td>Jugar una partida de póker con amigos</td>
+                            <td>Baraja, fichas y buena compañía</td>
+                        </tr>
+                        <tr>
+                            <td>2 horas</td>
+                            <td>Jugar videojuegos</td>
+                            <td>Consola o PC y un control</td>
+                        </tr>
+                        <tr>
+                            <td>3 horas</td>
+                            <td>Salir a cenar comida china</td>
+                            <td>Amigos y ganas de comer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ============= PIE DE PÁGINA ============= -->
+    <footer class="navbar-personal text-center py-3 mt-4">
+        <p class="mb-0">© 2026 Edgar Leonardo García Saldaña. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ============= TOAST (NOTIFICACIÓN) ============= -->
+    <!-- toast-container lo coloca en la esquina inferior derecha -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toastSaludo" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Edgar García</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body">¡Hola! Gracias por visitar mi página.</div>
+        </div>
+    </div>
+
+    <!-- ACTIVIDAD 3. Cargamos el JavaScript de Bootstrap.
+         Se usa en componentes interactivos, como el menú y el carrusel -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Nuestro JavaScript; va después de Bootstrap porque lo usa -->
+    <script src="script.js"></script>
+
+</body>
+</html>
